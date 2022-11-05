@@ -1,0 +1,17 @@
+.searchBar{
+    width: 40rem;
+    outline: none;
+   
+}
+
+.productCard{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+   margin-top: 2rem;
+   background: rgb(255, 255, 255);
+   border-radius: 1rem;
+   width: 22rem;
+   height: 25rem;
+}

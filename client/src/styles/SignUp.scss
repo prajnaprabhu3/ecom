@@ -1,0 +1,45 @@
+.SignUp-wrapper{
+    height: 40rem;
+    width: 60rem;
+    // margin: auto;
+
+    .purple-section{
+        height: 38rem;
+        width: 31.5rem;
+        background-color: var(--color-violet);
+    }
+
+   .purple-section img{
+    height: 25rem;
+    width: 25rem;
+    
+   }
+
+   .third-section{
+    height: 6rem;
+   }
+
+   .inputTag{
+    width: 20rem;
+   }
+
+   .signUp-signUP-button{
+    background-color: var(--color-violet);
+   }
+
+   .signUp-signUPGoogle-button{
+
+   }
+
+   .purple{
+    color: var(--color-violet);
+   }
+
+   .signUP-section{
+    height: 25rem;
+   }
+
+   .input-emailPassword  input::placeholder{
+    color: gray;
+   }
+}

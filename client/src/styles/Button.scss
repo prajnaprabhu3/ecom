@@ -1,0 +1,33 @@
+.button{
+    background-color: var(--color-violet);
+    max-width: 6rem;
+}
+
+
+.login{
+    margin-right: 1rem;
+}
+
+.login:hover{
+    background-color: white;
+    border: 1px solid var(--color-violet);
+    color: var(--color-violet);
+    transition-delay:0.1s;
+}
+.sign-in{
+    background-color: white;
+    border: 1px solid var(--color-violet);
+   color: var(--color-violet);
+}
+
+.sign-in:hover{
+    background-color: var(--color-violet);
+    color: white;
+    transition-delay:0.1s;
+}
+
+.shopNow{
+    // padding: 3rem 5rem;
+    justify-content: space-between;
+}
+

@@ -1,0 +1,18 @@
+.home-contents{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: auto;
+}
+.productCardDiv{
+    height: 30rem;
+    width: 23rem;
+}
+
+.purple{
+    color: var(--color-violet);
+}
+
+.productCard:hover{
+    color: var(--color-violet);
+}

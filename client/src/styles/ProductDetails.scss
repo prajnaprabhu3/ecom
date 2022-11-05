@@ -1,0 +1,47 @@
+.ProductDetails{
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    padding: 6vmax;
+    //  background-color: rgb(255, 255, 255);
+}
+
+.carousel{
+    // width: 30rem;
+    // height: 30rem;
+    height: 80vh;
+    width: 100%;
+
+}
+
+.productDetailsSection{
+    // width: 50rem;
+    // margin: 3rem;
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 2vmax;
+    box-sizing: border-box;
+    // border: 1px solid white;
+}
+
+CarouselImage  {
+    width: 25rem; 
+
+  }
+
+  .redColor{
+    color: red;
+  }
+
+  .greenColor{
+    color: rgb(83, 202, 83);
+  }
+
+  .quantityInput{
+    width: 2rem;
+  }
