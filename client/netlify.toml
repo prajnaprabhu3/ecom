@@ -1,5 +1,4 @@
-
-
 [[redirects]]
-   /api/*  https://ecom-0hyg.onrender.com 200 
-   /*    /index.html   200
+  from = "/api/*"
+  to = "https://ecom-0hyg.onrender.com/:splat"
+  status = 200
