@@ -1,22 +1,25 @@
 import axios from "axios";
 
 import {
-    ALL_PRODUCT_FAIL,
-    ALL_PRODUCT_REQUEST,
-    ALL_PRODUCT_SUCCESS,
-    
-    PRODUCT_DETAILS_REQUEST,
-    PRODUCT_DETAILS_FAIL,
-    PRODUCT_DETAILS_SUCCESS,
-    CLEAR_ERRORS,
+  ALL_PRODUCT_FAIL,
+  ALL_PRODUCT_REQUEST,
+  ALL_PRODUCT_SUCCESS,
+  PRODUCT_DETAILS_REQUEST,
+  PRODUCT_DETAILS_FAIL,
+  PRODUCT_DETAILS_SUCCESS,
+  CLEAR_ERRORS,
 } from "../constants/productConstants";
- 
+
+// const url = "https://ecom-0hyg.onrender.com";
+
 // Get All Products
-export const getProduct = (keyword, currentPage=1) => async(dispatch)=>{
+export const getProduct =
+  (keyword, currentPage = 1) =>
+  async (dispatch) => {
     try {
       dispatch({ type: ALL_PRODUCT_REQUEST });
 
-      let link=`/api/v1/products?=${keyword}&page=${currentPage}`;
+      let link = `/api/v1/products?=${keyword}&page=${currentPage}`;
 
       const { data } = await axios.get(link);
 
@@ -32,8 +35,7 @@ export const getProduct = (keyword, currentPage=1) => async(dispatch)=>{
     }
   };
 
-
-  // Get Products Details
+// Get Products Details
 export const getProductDetails = (id) => async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_DETAILS_REQUEST });
@@ -52,10 +54,7 @@ export const getProductDetails = (id) => async (dispatch) => {
   }
 };
 
-
-
-
 // Clearing Errors
 export const clearErrors = () => async (dispatch) => {
-    dispatch({ type: CLEAR_ERRORS });
-  };
+  dispatch({ type: CLEAR_ERRORS });
+};
