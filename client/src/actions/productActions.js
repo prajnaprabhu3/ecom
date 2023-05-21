@@ -10,8 +10,6 @@ import {
   CLEAR_ERRORS,
 } from "../constants/productConstants";
 
-// const url = "https://ecom-0hyg.onrender.com";
-
 // Get All Products
 export const getProduct =
   (keyword, currentPage = 1) =>
@@ -19,7 +17,8 @@ export const getProduct =
     try {
       dispatch({ type: ALL_PRODUCT_REQUEST });
 
-      let link = `/api/v1/products?=${keyword}&page=${currentPage}`;
+      let link = `${process.env.REACT_APP_URL}api/v1/products?=${keyword}&page=${currentPage}`;
+      console.log(link);
 
       const { data } = await axios.get(link);
 
