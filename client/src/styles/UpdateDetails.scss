@@ -1,0 +1,55 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.updateDetailsWrapper {
+  background-color: var(--color-violet);
+  height: 30rem;
+  width: 25rem;
+  border-radius: 1rem;
+}
+
+.updateContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 25rem;
+  //   padding: 0rem;
+}
+
+.updateHeading {
+  color: white;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.updateInput {
+  width: 20rem;
+  padding: 0.8rem 2rem;
+  margin: 1rem;
+  border-radius: 0.5rem;
+  outline: none;
+  background-color: rgb(255, 255, 255);
+}
+
+.updateProfileButton {
+  background-color: white;
+  padding: 0.4rem 2rem;
+  border-radius: 0.4rem;
+  width: 8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+  font-weight: 600;
+}
+
+.updateForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

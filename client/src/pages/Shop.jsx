@@ -1,32 +1,28 @@
 import React, { Fragment, useEffect } from "react";
-import ProductCard from '../components/ProductCard'
-import Pagination from 'react-js-pagination';
-import { BiUser } from 'react-icons/bi'
-import {AiOutlineShoppingCart} from 'react-icons/ai'
-import { Link } from 'react-router-dom';
+import ProductCard from "../components/ProductCard";
+import Pagination from "react-js-pagination";
+import { BiUser } from "react-icons/bi";
+import { AiOutlineShoppingCart } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 import { clearErrors, getProduct } from "../actions/productActions";
 import { useSelector, useDispatch } from "react-redux";
 
-// fitler components from material ui 
+// fitler components from material ui
 
-
-// import Loadning component 
+// import Loadning component
 import Loading from "../components/Loading";
 
 //for error alert
-import { useAlert} from 'react-alert';
+import { useAlert } from "react-alert";
 
-import { useParams } from 'react-router-dom';
+import { useParams } from "react-router-dom";
 
 import { useState } from "react";
 
-
-
-import '../styles/Shop.scss'
+import "../styles/Shop.scss";
 import Logo from "../components/Logo";
 import Button from "../components/Button";
-
 
 const Shop = () => {
   const dispatch = useDispatch();
@@ -35,12 +31,9 @@ const Shop = () => {
 
   const [currentPage, setCurrentPage] = useState(1);
 
-  // filters 
+  // filters
   const [price, setPrice] = useState([0, 25000]);
   const [category, setCategory] = useState("");
-
-
-  
 
   const [ratings, setRatings] = useState(0);
 
@@ -63,52 +56,54 @@ const Shop = () => {
   const priceHandler = (event, newPrice) => {
     setPrice(newPrice);
   };
-  
+
   useEffect(() => {
     if (error) {
       alert.error(error);
       dispatch(clearErrors());
-    } dispatch(getProduct(keyword, currentPage, price, category, ratings));
+    }
+    dispatch(getProduct(keyword, currentPage, price, category, ratings));
   }, [dispatch, keyword, currentPage, price, category, ratings, alert, error]);
 
-  let count= filteredProductsCount;
+  let count = filteredProductsCount;
 
   return (
     <Fragment>
-    {loading ? (
-      <Loading />
-    ) : (
-      <Fragment>
+      {loading ? (
+        <Loading />
+      ) : (
+        <Fragment>
+          <header className="flex items-center justify-between p-6 px-10 max-full  bg-white drop-shadow-sm">
+            <Logo />
 
-<header className='flex items-center justify-between p-6 px-10 max-full  bg-white drop-shadow-sm'>
+            {/* Search bar here  */}
 
-<Logo/>
+            {/* account details */}
+            <div className="flex justify-between text-2xl">
+              <Link to="/account" className="accountAndCart">
+                <BiUser className="mr-6" />
+              </Link>
+              <Link to="/cart" className="accountAndCart">
+                {" "}
+                <AiOutlineShoppingCart className="accountAndCar ml-4 mr-10" />{" "}
+              </Link>
+            </div>
+          </header>
 
-{/* Search bar here  */}
+          <h2 className="productsHeading">Products</h2>
 
-{/* account details */}
-<div className="flex justify-between text-2xl">
-  <Link to="/account" className="accountAndCart" ><BiUser className="mr-6" /></Link>
-  <Link to="/cart" className="accountAndCart" > <AiOutlineShoppingCart  className="accountAndCar ml-4 mr-10"/> </Link>
-</div>
+          {/* products get  */}
+          <div className="flex justify-center items-center">
+            <div className="container grid lg:grid-cols-3 md:grid-cols-2  sm:grid-cols-1 justify-center items-center ">
+              {products &&
+                products.map((product) => (
+                  <ProductCard key={product._id} product={product} />
+                ))}
+            </div>
+          </div>
 
-</header>
-
-        <h2 className="productsHeading">Products</h2>
-
-{/* products get  */}
-       <div className="flex justify-center items-center">
-       <div className="container grid lg:grid-cols-3 md:grid-cols-2  sm:grid-cols-1 justify-center items-center " >
-          {products &&
-            products.map((product) => (
-              <ProductCard key={product._id} product={product} />
-            ))}
-        </div>
-       </div>
-
-
-       {/* filters  */}
-       {/* <div className="filterBox">
+          {/* filters  */}
+          {/* <div className="filterBox">
         <Typography>Price</Typography>
         <Slider value={price} onChange={priceHandler} valueLabelDisplay="auto" aria-labelledby="range-slider" min={0} max={25000}/>
         
@@ -116,34 +111,30 @@ const Shop = () => {
 
        </div> */}
 
+          {/* Pagination  */}
 
-   {/* Pagination  */}
-   
-   {/* {resultPerPage < count && ( */}
-            <div className="paginationBox">
-              <Pagination
-                activePage={currentPage}
-                itemsCountPerPage={resultPerPage}
-                totalItemsCount={productsCount}
-                onChange={setCurrentPageNo}
-                nextPageText="Next"
-                prevPageText="Prev"
-                firstPageText="1st"
-                lastPageText="Last"
-                itemClass="page-item"
-                linkClass="page-link"
-                activeClass="pageItemActive"
-                activeLinkClass="pageLinkActive"
-              />
-            </div>
+          {/* {resultPerPage < count && ( */}
+          <div className="paginationBox">
+            <Pagination
+              activePage={currentPage}
+              itemsCountPerPage={resultPerPage}
+              totalItemsCount={productsCount}
+              onChange={setCurrentPageNo}
+              nextPageText="Next"
+              prevPageText="Prev"
+              firstPageText="1st"
+              lastPageText="Last"
+              itemClass="page-item"
+              linkClass="page-link"
+              activeClass="pageItemActive"
+              activeLinkClass="pageLinkActive"
+            />
+          </div>
           {/* )}  */}
+        </Fragment>
+      )}
+    </Fragment>
+  );
+};
 
-  
-
-      </Fragment>
-    )}
-  </Fragment>
-  )
-}
-
-export default Shop
+export default Shop;
