@@ -2,7 +2,6 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://ecom-0hyg.onrender.com",
   "dependencies": {
     "@fvilers/disable-react-devtools": "^1.3.0",
     "@mui/icons-material": "^5.10.9",
