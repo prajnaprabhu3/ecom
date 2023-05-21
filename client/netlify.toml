@@ -1,4 +1,0 @@
-[[redirects]]
-  from = "/api/*"
-  to = "https://ecom-0hyg.onrender.com/:splat"
-  status = 200
