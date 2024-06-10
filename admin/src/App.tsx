@@ -17,6 +17,12 @@ function App() {
           <Route path="/admin/products" element={<Products />} />
           <Route path="/admin/transactions" element={<Transactions />} />
           <Route path="/admin/customers" element={<Customers />} />
+
+
+          {/* Charts  */}
+
+
+          {/* Coupon  */}
         </Routes>
       </Suspense>
     </BrowserRouter>

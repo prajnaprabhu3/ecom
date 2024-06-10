@@ -1,3 +1,4 @@
+import { ArrowSwapHorizontal, Element3, Profile2User, ReceiptDiscount, ShoppingBag,Tag } from "iconsax-react";
 import {
   LayoutDashboard,
   ShoppingCart,
@@ -6,29 +7,28 @@ import {
   LineChart,
   PieChart,
   BarChart4,
-  Tag,
 } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 
 const navigationLinks = [
   {
     label: "Dashboard",
-    icon: <LayoutDashboard size={15} />,
+    icon: <Element3 size="16" />,
     url: "/admin/dashboard",
   },
   {
     label: "Product",
-    icon: <ShoppingCart size={15} />,
+    icon: <ShoppingBag size="16"/>,
     url: "/admin/products",
   },
   {
     label: "Customer",
-    icon: <Users size={15} />,
+    icon: <Profile2User size="16" />,
     url: "/admin/customers",
   },
   {
     label: "Transaction",
-    icon: <ArrowRightLeft size={15} />,
+    icon: <ArrowSwapHorizontal size="16"/>,
     url: "/admin/transactions",
   },
   {
@@ -48,7 +48,7 @@ const navigationLinks = [
   },
   {
     label: "Coupon",
-    icon: <Tag size={15} />,
+    icon:<ReceiptDiscount size="16" />,
     url: "/admin/coupon",
   },
 ];
@@ -58,19 +58,21 @@ const Sidebar = () => {
   console.log(location.pathname);
 
   return (
-    <aside className="w-1/5 h-screen flex sticky top-1 flex-col gap-10 border-r p-4">
+    <aside className="w-1/6 h-screen flex sticky top-1 flex-col gap-10 border-r p-4">
       <h4>Logo.</h4>
 
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-3 text-gray-500 px-3">
         {navigationLinks.map((item) => (
           <Link
             to={item.url}
-            className={`flex items-center gap-2 p-2 rounded ${
+            className={`flex items-center gap-2 p-2 rounded hover:px-4 duration-300 ${
               location.pathname.includes(item.url)
-                ? "bg-[#f7f6fb] text-blue-500"
+                ? "text-blue-500"
                 : ""
             }`}
-          >
+           >
+       
+
             <p> {item.icon}</p>
             <p className="text-sm">{item.label}</p>
           </Link>

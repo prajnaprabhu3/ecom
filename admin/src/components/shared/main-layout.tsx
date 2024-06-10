@@ -1,10 +1,10 @@
-import Sidebar from "../components/sidebar";
+import Sidebar from "../sidebar";
 
 const MainLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="flex">
       <Sidebar />
-      <div className="w-4/5">{children}</div>
+      <div className="w-5/6">{children}</div>
     </div>
   );
 };

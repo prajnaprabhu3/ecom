@@ -1,4 +1,4 @@
-import MainLayout from "../layouts/MainLayout";
+import MainLayout from "../components/shared/main-layout";
 
 const Dashboard = () => {
   return <MainLayout>Dashboard</MainLayout>;
