@@ -1,0 +1,23 @@
+{
+    "categories":[
+        {   
+            "id":1,
+            "label":"Electronics",
+            "value":30
+        },
+        {   
+            "id":2,
+            "label":"Fashion",
+            "value":20
+        }, {   
+            "id":3,
+            "label":"Furniture",
+            "value":40
+        },
+        {   
+            "id":4,
+            "label":"Home Decors",
+            "value":10
+        }
+    ]
+}

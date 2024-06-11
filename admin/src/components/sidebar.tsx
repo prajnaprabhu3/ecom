@@ -58,8 +58,8 @@ const Sidebar = () => {
   console.log(location.pathname);
 
   return (
-    <aside className="w-1/6 h-screen flex sticky top-1 flex-col gap-10 border-r p-4">
-      <h4>Logo.</h4>
+    <aside className="w-1/6 h-screen flex sticky top-0 flex-col gap-10 border-r p-4">
+      <h4 className="p-2 px-4">Logo.</h4>
 
       <div className="flex flex-col gap-3 text-gray-500 px-3">
         {navigationLinks.map((item) => (
