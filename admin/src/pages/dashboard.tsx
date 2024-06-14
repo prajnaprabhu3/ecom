@@ -33,6 +33,15 @@ const Dashboard = () => {
       <Widget value={25000} color="#ffe27d" heading="Transactions" percent={60}/>
       <Widget value={1000} color="#FBD3F5" heading="Products" percent={80}/>
     </div>
+
+
+    {/* graph  */}
+    <div>
+      {/* bar graph  */}
+
+
+      category item progress 
+    </div>
     </MainLayout>;
 };
 
